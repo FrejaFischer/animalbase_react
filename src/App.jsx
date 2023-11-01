@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getData } from "./data";
 
 import "./App.css";
+import AnimalObj from "./components/AnimalObj";
 
 function App() {
   const animals = getData();
@@ -43,6 +44,7 @@ function App() {
       <table>
         <thead>
           <tr>
+            <th>Favorite</th>
             <th>
               {" "}
               <button
@@ -91,12 +93,7 @@ function App() {
         </thead>
         <tbody>
           {filtered.map((ani) => (
-            <tr key={ani.name + "1"}>
-              <td key={ani.name}>{ani.name}</td>
-              <td key={ani.trait}>{ani.trait}</td>
-              <td key={ani.species}>{ani.species}</td>
-              <td key={ani.age}>{ani.age}</td>
-            </tr>
+            <AnimalObj name={ani.name} trait={ani.trait} species={ani.species} age={ani.age} key={ani.name} />
           ))}
         </tbody>
       </table>
