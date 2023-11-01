@@ -29,3 +29,5 @@ export default function AnimalObj(props) {
     </tr>
   );
 }
+
+// BUG / MISSING FEATURE = When the animal list has been filtered and return to show all, then it can´t remember if an animal (who has not been shown in the filtered list) has been starred.
